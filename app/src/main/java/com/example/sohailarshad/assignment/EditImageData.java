@@ -9,6 +9,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -102,9 +103,6 @@ public class EditImageData extends AppCompatActivity {
                 Intent intent =  new Intent(EditImageData.this, MainActivity.class);
                 startActivity(intent);
                 finish();
-
-
-
             }
         });
     }
