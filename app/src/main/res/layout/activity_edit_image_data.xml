@@ -10,34 +10,72 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/labelname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name"
+            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/name"
+            android:layout_alignBottom="@+id/name"
+            android:layout_alignParentStart="true" />
+
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="260dp"
         android:layout_height="45dp"
-        android:hint="name"
+        android:hint="Enter Name"
+        android:layout_alignParentRight="true"
         android:layout_marginTop="@dimen/textViewMarginTop"
         android:layout_marginBottom="@dimen/textViewMarginTop"
         android:id="@+id/name"
         android:textSize="@dimen/font_size"/>
 
+        <TextView
+            android:id="@+id/labellocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Location"
+            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/location"
+            android:layout_alignBottom="@+id/location"
+            android:layout_alignParentStart="true" />
 
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="260dp"
             android:layout_height="45dp"
             android:layout_below="@id/name"
+            android:layout_alignParentRight="true"
             android:id="@+id/location"
             android:layout_marginTop="@dimen/textViewMarginTop"
             android:layout_marginBottom="@dimen/textViewMarginTop"
-            android:hint="location"
+            android:hint="Enter Location"
             android:textSize="@dimen/font_size"/>
 
+        <TextView
+            android:id="@+id/labelkeyword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Keyword"
+            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/keywords"
+            android:layout_alignBottom="@+id/keywords"
+            android:layout_alignParentStart="true" />
+
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="260dp"
         android:layout_height="45dp"
+        android:layout_alignParentRight="true"
         android:layout_below="@id/location"
         android:id="@+id/keywords"
         android:layout_marginTop="@dimen/textViewMarginTop"
         android:layout_marginBottom="@dimen/textViewMarginTop"
-        android:hint="keywords"
+        android:hint="Enter Keywords"
         android:textSize="@dimen/font_size"/>
 
     <DatePicker
@@ -49,15 +87,41 @@
         android:id="@+id/date">
 
     </DatePicker>
+
+        <TextView
+            android:id="@+id/labelemail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Email"
+            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/email"
+            android:layout_alignBottom="@+id/email"
+            android:layout_alignParentStart="true" />
+
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="260dp"
         android:layout_height="45dp"
-        android:hint="email"
+        android:layout_alignParentRight="true"
+        android:hint="Enter Email"
         android:id="@+id/email"
         android:layout_marginTop="@dimen/textViewMarginTop"
         android:layout_marginBottom="@dimen/textViewMarginTop"
         android:layout_below="@id/date"
         android:textSize="@dimen/font_size"/>
+
+        <TextView
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Share"
+            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/canShare"
+            android:layout_alignBottom="@+id/canShare"
+            android:layout_alignParentStart="true" />
 
    <Switch
        android:layout_width="wrap_content"
@@ -68,10 +132,23 @@
        android:layout_marginBottom="@dimen/textViewMarginTop"
        android:id="@+id/canShare"/>
 
+        <TextView
+            android:id="@+id/labelrating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Rating"
+            android:textSize="20sp"
+            android:layout_alignBaseline="@+id/rating"
+            android:layout_alignBottom="@+id/rating"
+            android:layout_alignParentStart="true" />
+
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="260dp"
         android:layout_height="45dp"
-        android:hint="rating"
+        android:layout_alignParentRight="true"
+        android:hint="Rate"
         android:id="@+id/rating"
         android:layout_marginTop="@dimen/textViewMarginTop"
         android:layout_marginBottom="@dimen/textViewMarginTop"
@@ -91,17 +168,6 @@
          android:layout_below="@+id/rating"
          android:text="Update"/>
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Can Share"
-            android:textSize="20sp"
-            android:layout_alignBaseline="@+id/canShare"
-            android:layout_alignBottom="@+id/canShare"
-            android:layout_alignParentStart="true" />
     </RelativeLayout>
 
 </ScrollView>

@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                         ImageMetaData ci = imageList.get(position);
                         intent.putExtra("contact", ci);
                         intent.putExtra("position", position);
+
                         startActivity(intent);
                     }
 
