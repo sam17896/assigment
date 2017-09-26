@@ -52,7 +52,7 @@ public class Preference {
     public ArrayList<String> getNames(){
         ArrayList<String> name = new ArrayList<>();
         for(int i=0;i<getNameCount();i++){
-            name.set(i, pref.getString("name"+i,"Image" + i));
+            name.add(pref.getString("name"+i,"Image" + i));
         }
 
         return name;
@@ -70,25 +70,25 @@ public class Preference {
     public ArrayList<String> getDates(){
         ArrayList<String> date = new ArrayList<>();
         for(int i=0;i<getNameCount();i++){
-            date.set(i, pref.getString("date"+i,"0"+i+"/9/2017"));
+            date.add(pref.getString("date"+i,"0"+i+"/9/2017"));
         }
 
         return date;
     }
 
-    public void updateRating(ArrayList<String> url){
+    public void updateRating(ArrayList<Integer> url){
         for(int i=0;i<url.size();i++){
-            editor.putString("url"+i,url.get(i));
+            editor.putInt("url"+i,url.get(i));
         }
         setNameCount(url.size());
         editor.commit();
     }
 
 
-    public ArrayList<String> getRating(){
-        ArrayList<String> date = new ArrayList<>();
+    public ArrayList<Integer> getRating(){
+        ArrayList<Integer> date = new ArrayList<>();
         for(int i=0;i<getNameCount();i++){
-            date.set(i, pref.getString("url"+i,"Not Available"));
+            date.add( pref.getInt("url"+i,0));
         }
 
         return date;
@@ -106,7 +106,7 @@ public class Preference {
     public ArrayList<String> getLocation(){
         ArrayList<String> date = new ArrayList<>();
         for(int i=0;i<getNameCount();i++){
-            date.set(i, pref.getString("location"+i,"Not Available"));
+            date.add( pref.getString("location"+i,"Not Available"));
         }
 
         return date;
@@ -124,7 +124,7 @@ public class Preference {
     public ArrayList<String> getKeywords(){
         ArrayList<String> date = new ArrayList<>();
         for(int i=0;i<getNameCount();i++){
-            date.set(i, pref.getString("keywords"+i,"Not Available"));
+            date.add( pref.getString("keywords"+i,"Not Available"));
         }
 
         return date;
@@ -142,7 +142,7 @@ public class Preference {
     public ArrayList<String> getEmails(){
         ArrayList<String> date = new ArrayList<>();
         for(int i=0;i<getNameCount();i++){
-            date.set(i, pref.getString("emails"+i,"Not Available"));
+            date.add(pref.getString("emails"+i,"Not Available"));
         }
 
         return date;
@@ -160,7 +160,7 @@ public class Preference {
     public ArrayList<Boolean> getShare(){
         ArrayList<Boolean> date = new ArrayList<>();
         for(int i=0;i<getNameCount();i++){
-            date.set(i, pref.getBoolean("share"+i,false));
+            date.add( pref.getBoolean("share"+i,false));
         }
 
         return date;

@@ -17,7 +17,9 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ImageAdapter mAdapter;
     private Preference preference;
-    ArrayList<String> dates, names;
+    ArrayList<String> dates, names, location, keywords, emails;
+    ArrayList<Integer> ratings;
+    ArrayList<Boolean> share;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
 
         dates = preference.getDates();
         names = preference.getNames();
+        location = preference.getLocation();
+        keywords = preference.getKeywords();
+        emails= preference.getEmails();
+        ratings= preference.getRating();
+        share = preference.getShare();
 
         for(int i=0;i<count;i++){
             ImageMetaData imageMetaData = new ImageMetaData();
@@ -47,13 +54,13 @@ public class MainActivity extends AppCompatActivity {
                     @Override public void onItemClick(View view, int position) {
                         Intent intent =  new Intent(MainActivity.this, EditImageData.class);
                         ImageMetaData ci = new ImageMetaData();
-                        ci.setName(names.get(0));
-                        ci.setDate(names.get(0));
-                        ci.setCanShare(false);
-                        ci.setEmail("ahsan.kai@gmail.com");
-                        ci.setLocation("Karachi");
-                        ci.setRating(5);
-                        ci.setKeywords("keywords");
+                        ci.setName(names.get(position));
+                        ci.setDate(dates.get(position));
+                        ci.setCanShare(share.get(position));
+                        ci.setEmail(emails.get(position));
+                        ci.setLocation(location.get(position));
+                        ci.setRating(ratings.get(position));
+                        ci.setKeywords(keywords.get(position));
                         intent.putExtra("contact", ci);
                         startActivity(intent);
                     }
