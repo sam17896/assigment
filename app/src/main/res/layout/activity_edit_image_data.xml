@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sohailarshad.assignment.EditImageData">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="name"
+        android:layout_marginTop="@dimen/textViewMarginTop"
+        android:layout_marginBottom="@dimen/textViewMarginTop"
+        android:id="@+id/name"
+        android:textSize="@dimen/font_size"/>
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/name"
+            android:id="@+id/location"
+            android:layout_marginTop="@dimen/textViewMarginTop"
+            android:layout_marginBottom="@dimen/textViewMarginTop"
+            android:hint="location"
+            android:textSize="@dimen/font_size"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/location"
+        android:id="@+id/keywords"
+        android:layout_marginTop="@dimen/textViewMarginTop"
+        android:layout_marginBottom="@dimen/textViewMarginTop"
+        android:hint="keywords"
+        android:textSize="@dimen/font_size"/>
+
+    <DatePicker
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/textViewMarginTop"
+        android:layout_marginBottom="@dimen/textViewMarginTop"
+        android:layout_below="@id/keywords"
+        android:id="@+id/date">
+
+    </DatePicker>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="email"
+        android:id="@+id/email"
+        android:layout_marginTop="@dimen/textViewMarginTop"
+        android:layout_marginBottom="@dimen/textViewMarginTop"
+        android:layout_below="@id/date"
+        android:textSize="@dimen/font_size"/>
+
+   <Switch
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/email"
+       android:layout_marginTop="@dimen/textViewMarginTop"
+       android:layout_marginBottom="@dimen/textViewMarginTop"
+       android:id="@+id/canShare"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="rating"
+        android:id="@+id/rating"
+        android:layout_marginTop="@dimen/textViewMarginTop"
+        android:layout_marginBottom="@dimen/textViewMarginTop"
+        android:layout_below="@id/canShare"
+        android:textSize="@dimen/font_size"/>
+
+     <Button
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:textAlignment="center"
+         android:textSize="20sp"
+         android:background="#000"
+         android:layout_alignParentBottom="true"
+         android:layout_alignParentEnd="true"
+         android:textColor="#fff"
+         android:layout_below="@+id/rating"
+         android:text="Update"/>
+    </RelativeLayout>
+
+</ScrollView>
