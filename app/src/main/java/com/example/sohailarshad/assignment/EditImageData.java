@@ -32,6 +32,7 @@ public class EditImageData extends AppCompatActivity {
         rating = (EditText) findViewById(R.id.rating);
         keyword = (EditText) findViewById(R.id.keywords);
         datePicker = (DatePicker) findViewById(R.id.date);
+        share = (Switch) findViewById(R.id.canShare);
         btn = (Button) findViewById(R.id.update);
         preference = new Preference(this);
         Intent i = getIntent();
