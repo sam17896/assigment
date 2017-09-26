@@ -38,10 +38,15 @@ public class MainActivity extends AppCompatActivity {
         share = preference.getShare();
 
         for(int i=0;i<count;i++){
-            ImageMetaData imageMetaData = new ImageMetaData();
-            imageMetaData.setDate(dates.get(i));
-            imageMetaData.setName(names.get(i));
-            imageList.add(imageMetaData);
+            ImageMetaData ci = new ImageMetaData();
+            ci.setName(names.get(i));
+            ci.setDate(dates.get(i));
+            ci.setCanShare(share.get(i));
+            ci.setEmail(emails.get(i));
+            ci.setLocation(location.get(i));
+            ci.setRating(ratings.get(i));
+            ci.setKeywords(keywords.get(i));
+            imageList.add(ci);
         }
 
         mAdapter = new ImageAdapter(imageList);
@@ -53,14 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 new RecyclerItemClickListener(this, recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
                         Intent intent =  new Intent(MainActivity.this, EditImageData.class);
-                        ImageMetaData ci = new ImageMetaData();
-                        ci.setName(names.get(position));
-                        ci.setDate(dates.get(position));
-                        ci.setCanShare(share.get(position));
-                        ci.setEmail(emails.get(position));
-                        ci.setLocation(location.get(position));
-                        ci.setRating(ratings.get(position));
-                        ci.setKeywords(keywords.get(position));
+                        ImageMetaData ci = imageList.get(position);
                         intent.putExtra("contact", ci);
                         startActivity(intent);
                     }
@@ -73,5 +71,38 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(mAdapter);
 
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        imageList.clear();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        int count = preference.getNameCount();
+        imageList = new ArrayList<>();
+        dates = preference.getDates();
+        names = preference.getNames();
+        location = preference.getLocation();
+        keywords = preference.getKeywords();
+        emails= preference.getEmails();
+        ratings= preference.getRating();
+        share = preference.getShare();
+
+        for(int i=0;i<count;i++){
+            ImageMetaData ci = new ImageMetaData();
+            ci.setName(names.get(i));
+            ci.setDate(dates.get(i));
+            ci.setCanShare(share.get(i));
+            ci.setEmail(emails.get(i));
+            ci.setLocation(location.get(i));
+            ci.setRating(ratings.get(i));
+            ci.setKeywords(keywords.get(i));
+            imageList.add(ci);
+        }
+        mAdapter.notifyDataSetChanged();
     }
 }
