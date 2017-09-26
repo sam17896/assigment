@@ -48,7 +48,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.MyViewHolder
         ImageMetaData image = imagesList.get(position);
         holder.name.setText(image.getName());
         holder.date.setText(image.getDate());
-        Glide.with(holder.img.getContext()).load("http://goo.gl/gEgYUd").into(holder.img);
+        Glide.with(holder.img.getContext()).load(image.getLocation()).into(holder.img);
 
     }
 

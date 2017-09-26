@@ -100,7 +100,8 @@ public class EditImageData extends AppCompatActivity {
                 preference.updateEmails(emails);
                 preference.updateRating(ratings);
                 preference.updateShare(shares);
-
+                Intent intent =  new Intent(EditImageData.this, MainActivity.class);
+                startActivity(intent);
                 finish();
             }
         });
