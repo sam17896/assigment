@@ -60,7 +60,7 @@ public class Preference {
 
     public void updateDates(ArrayList<String> dates){
         for(int i=0;i<dates.size();i++){
-            editor.putString("name"+i,dates.get(i));
+            editor.putString("date"+i,dates.get(i));
         }
         setNameCount(dates.size());
         editor.commit();
@@ -70,7 +70,7 @@ public class Preference {
     public ArrayList<String> getDates(){
         ArrayList<String> date = new ArrayList<>();
         for(int i=0;i<getNameCount();i++){
-            date.add(pref.getString("date"+i,"0"+i+"/9/2017"));
+            date.add(pref.getString("date"+i,"0"+i+"/8/2017"));
         }
 
         return date;
@@ -106,7 +106,7 @@ public class Preference {
     public ArrayList<String> getLocation(){
         ArrayList<String> date = new ArrayList<>();
         for(int i=0;i<getNameCount();i++){
-            date.add( pref.getString("location"+i,"Not Available"));
+            date.add( pref.getString("location"+i,"http://via.placeholder.com/150x150"));
         }
 
         return date;
@@ -124,7 +124,7 @@ public class Preference {
     public ArrayList<String> getKeywords(){
         ArrayList<String> date = new ArrayList<>();
         for(int i=0;i<getNameCount();i++){
-            date.add( pref.getString("keywords"+i,"Not Available"));
+            date.add( pref.getString("keywords"+i," "));
         }
 
         return date;
@@ -142,7 +142,7 @@ public class Preference {
     public ArrayList<String> getEmails(){
         ArrayList<String> date = new ArrayList<>();
         for(int i=0;i<getNameCount();i++){
-            date.add(pref.getString("emails"+i,"Not Available"));
+            date.add(pref.getString("emails"+i," "));
         }
 
         return date;

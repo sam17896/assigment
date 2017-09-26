@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         intent.putExtra("position", position);
 
                         startActivity(intent);
+                        finish();
                     }
 
                     @Override public void onLongItemClick(View view, int position) {
@@ -75,36 +76,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        imageList.clear();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        int count = preference.getNameCount();
-        imageList = new ArrayList<>();
-        dates = preference.getDates();
-        names = preference.getNames();
-        location = preference.getLocation();
-        keywords = preference.getKeywords();
-        emails= preference.getEmails();
-        ratings= preference.getRating();
-        share = preference.getShare();
-
-        for(int i=0;i<count;i++){
-            ImageMetaData ci = new ImageMetaData();
-            ci.setName(names.get(i));
-            ci.setDate(dates.get(i));
-            ci.setCanShare(share.get(i));
-            ci.setEmail(emails.get(i));
-            ci.setLocation(location.get(i));
-            ci.setRating(ratings.get(i));
-            ci.setKeywords(keywords.get(i));
-            imageList.add(ci);
-        }
-        mAdapter.notifyDataSetChanged();
-    }
 }
