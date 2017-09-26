@@ -127,7 +127,6 @@
             android:ems="10"
             android:text="Share:"
             android:textSize="20sp"
-            android:layout_alignBaseline="@+id/canShare"
             android:layout_alignBottom="@+id/canShare"
             android:layout_alignParentStart="true" />
 
