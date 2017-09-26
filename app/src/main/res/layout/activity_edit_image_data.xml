@@ -94,7 +94,8 @@
         android:layout_marginTop="50dp"
         android:layout_marginBottom="@dimen/textViewMarginTop"
         android:layout_below="@id/keywords"
-        android:id="@+id/date">
+        android:id="@+id/date"
+        android:layout_alignParentEnd="true">
 
     </DatePicker>
 
@@ -175,5 +176,6 @@
          android:text="Update"/>
 
     </RelativeLayout>
+    
 
 </ScrollView>
