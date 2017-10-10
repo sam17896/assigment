@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:focusable="true"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
@@ -15,8 +15,8 @@
     <ImageView
         android:id="@+id/img"
         android:layout_alignParentTop="true"
-        android:layout_width="150dp"
-        android:layout_height="150dp" />
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -34,19 +34,18 @@
             android:id="@+id/name"
             android:layout_marginTop="@dimen/textViewMarginTop"
             android:layout_marginBottom="@dimen/textViewMarginTop"
-            android:text="name"
+            android:text="Name"
             android:textSize="@dimen/font_size"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/date"
+            android:id="@+id/rating"
             android:layout_marginTop="@dimen/textViewMarginTop"
             android:layout_marginBottom="@dimen/textViewMarginTop"
             android:layout_below="@id/name"
-            android:text="date"
+            android:text="Rating"
             android:textSize="@dimen/font_size"/>
-
 
     </RelativeLayout>
 

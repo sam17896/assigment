@@ -18,15 +18,14 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.MyViewHolder
     private List<ImageMetaData> imagesList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView name,date;
+        public TextView name, rate;
         public ImageView img;
 
         public MyViewHolder(View view) {
             super(view);
             name = (TextView) view.findViewById(R.id.name);
-            date = (TextView) view.findViewById(R.id.date);
+            rate = (TextView) view.findViewById(R.id.rating);
             img = (ImageView) view.findViewById(R.id.img);
-
          }
     }
 
@@ -47,9 +46,9 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.MyViewHolder
     public void onBindViewHolder(MyViewHolder holder, int position) {
         ImageMetaData image = imagesList.get(position);
         holder.name.setText(image.getName());
-        holder.date.setText(image.getDate());
-        Glide.with(holder.img.getContext()).load(image.getLocation()).into(holder.img);
-
+        holder.rate.setText(String.valueOf(image.getRating()));
+        Glide.with(holder.img.getContext()).load("http://www.startupremarkable.com/wp-content/uploads/2015/02/a-book-a-week-image.jpg").into(holder.img);
+        //Glide.with(holder.img.getContext()).load(image.getLocation()).into(holder.img);
     }
 
     @Override

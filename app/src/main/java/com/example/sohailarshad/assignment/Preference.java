@@ -4,22 +4,14 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import java.util.ArrayList;
+import java.util.Random;
 
-/**
- * Created by Sohail Arshad on 9/26/2017.
- */
 
 public class Preference {
 
-    private static final String PREF_NAME = "Assignment 4";
+    private static final String PREF_NAME = "Assignment 06";
 
     private static final String KEY_NAME = "names";
-    private static final String KEY_KEYWORD = "keywords";
-    private static final String KEY_EMAIL = "emails";
-    private static final String KEY_DATES = "dates";
-    private static final String KEY_RATINGS = "rating";
-    private static final String KEY_LOCATION = "location";
-    private static final String KEY_SHARE = "share";
 
     SharedPreferences pref;
     SharedPreferences.Editor editor;
@@ -32,141 +24,33 @@ public class Preference {
         editor = pref.edit();
     }
 
-    public void updateNames(ArrayList<String> names){
-        for(int i=0;i<names.size();i++){
-            editor.putString("name"+i,names.get(i));
-        }
-        setNameCount(names.size());
-        editor.commit();
-    }
-
-    public void setNameCount(int i){
-        editor.putInt(KEY_NAME,i);
-        editor.commit();
-    }
-
     public int getNameCount(){
-        return pref.getInt(KEY_NAME,4);
+        return pref.getInt(KEY_NAME, 10);
     }
 
     public ArrayList<String> getNames(){
         ArrayList<String> name = new ArrayList<>();
         for(int i=0;i<getNameCount();i++){
-            name.add(pref.getString("name"+i,"Image" + i));
+            name.add(pref.getString("name"+i,"Book" + (i+1)));
         }
 
         return name;
     }
 
-    public void updateDates(ArrayList<String> dates){
-        for(int i=0;i<dates.size();i++){
-            editor.putString("date"+i,dates.get(i));
-        }
-        setNameCount(dates.size());
-        editor.commit();
-    }
-
-
-    public ArrayList<String> getDates(){
-        ArrayList<String> date = new ArrayList<>();
-        for(int i=0;i<getNameCount();i++){
-            date.add(pref.getString("date"+i,"0"+i+"/8/2017"));
-        }
-
-        return date;
-    }
-
-    public void updateRating(ArrayList<Integer> url){
-        for(int i=0;i<url.size();i++){
-            editor.putInt("url"+i,url.get(i));
-        }
-        setNameCount(url.size());
-        editor.commit();
-    }
-
-
     public ArrayList<Integer> getRating(){
-        ArrayList<Integer> date = new ArrayList<>();
+        ArrayList<Integer> rate = new ArrayList<>();
+
         for(int i=0;i<getNameCount();i++){
-            date.add( pref.getInt("url"+i,0));
+            Random rn = new Random();
+            int maximum = 10;
+            int minimum = 5;
+            int randomNum;
+            int n = maximum - minimum + 1;
+            int k = rn.nextInt() % n;
+            randomNum =  minimum + k;
+            rate.add( pref.getInt("url"+i, randomNum));
         }
 
-        return date;
+        return rate;
     }
-
-    public void updateLocations(ArrayList<String> url){
-        for(int i=0;i<url.size();i++){
-            editor.putString("location"+i,url.get(i));
-        }
-        setNameCount(url.size());
-        editor.commit();
-    }
-
-
-    public ArrayList<String> getLocation(){
-        ArrayList<String> date = new ArrayList<>();
-        for(int i=0;i<getNameCount();i++){
-            date.add( pref.getString("location"+i,"http://via.placeholder.com/150x150"));
-        }
-
-        return date;
-    }
-
-    public void updateKeywords(ArrayList<String> url){
-        for(int i=0;i<url.size();i++){
-            editor.putString("keywords"+i,url.get(i));
-        }
-        setNameCount(url.size());
-        editor.commit();
-    }
-
-
-    public ArrayList<String> getKeywords(){
-        ArrayList<String> date = new ArrayList<>();
-        for(int i=0;i<getNameCount();i++){
-            date.add( pref.getString("keywords"+i," "));
-        }
-
-        return date;
-    }
-
-    public void updateEmails(ArrayList<String> url){
-        for(int i=0;i<url.size();i++){
-            editor.putString("emails"+i,url.get(i));
-        }
-        setNameCount(url.size());
-        editor.commit();
-    }
-
-
-    public ArrayList<String> getEmails(){
-        ArrayList<String> date = new ArrayList<>();
-        for(int i=0;i<getNameCount();i++){
-            date.add(pref.getString("emails"+i," "));
-        }
-
-        return date;
-    }
-
-    public void updateShare(ArrayList<Boolean> url){
-        for(int i=0;i<url.size();i++){
-            editor.putBoolean("share"+i,url.get(i));
-        }
-        setNameCount(url.size());
-        editor.commit();
-    }
-
-
-    public ArrayList<Boolean> getShare(){
-        ArrayList<Boolean> date = new ArrayList<>();
-        for(int i=0;i<getNameCount();i++){
-            date.add( pref.getBoolean("share"+i,false));
-        }
-
-        return date;
-    }
-
-
-
-
 }
